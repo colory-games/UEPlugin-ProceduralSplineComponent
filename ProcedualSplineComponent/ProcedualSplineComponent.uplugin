@@ -1,0 +1,23 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1",
+  "FriendlyName": "Procedual Spline Component",
+  "Description": "A Collection of Procedual Spline Component",
+  "Category": "Other",
+  "CreatedBy": "beisaku (Colory Games), nutti (Colory Games)",
+  "CreatedByURL": "https://github.com/colory-games/ProcedualSplineComponent",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "ProcedualSplineComponent",
+      "Type": "Runtime",
+      "LoadingPhase": "PreLoadingScreen"
+    }
+  ]
+}
