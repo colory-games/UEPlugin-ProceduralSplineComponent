@@ -1,2 +1,2 @@
-# Unreal Engine Plugin: Procedual Spline Component
+# Unreal Engine Plugin: Procedural Spline Component
 

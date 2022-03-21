@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class ProcedualSplineComponent : ModuleRules
+public class ProceduralSplineComponent : ModuleRules
 {
-	public ProcedualSplineComponent(ReadOnlyTargetRules Target) : base(Target)
+	public ProceduralSplineComponent(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 
