@@ -15,5 +15,5 @@ public:
 #if WITH_EDITOR
 	virtual void PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent) override;
 #endif
-	virtual void ProceedSpline() {};
+	virtual void ProceedSpline(){};
 };
