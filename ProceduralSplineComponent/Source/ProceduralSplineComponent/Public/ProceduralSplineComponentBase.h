@@ -6,7 +6,7 @@
 #include "ProceduralSplineComponentBase.generated.h"
 
 UCLASS(ClassGroup = (ProceduralSpline))
-class PROCEDUALSPLINECOMPONENT_API UProceduralSplineComponentBase : public USplineComponent
+class PROCEDURALSPLINECOMPONENT_API UProceduralSplineComponentBase : public USplineComponent
 {
 	GENERATED_BODY()
 

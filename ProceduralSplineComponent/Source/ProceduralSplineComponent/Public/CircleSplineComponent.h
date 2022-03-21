@@ -5,7 +5,7 @@
 #include "CircleSplineComponent.generated.h"
 
 UCLASS(ClassGroup = (ProceduralSpline), meta = (BlueprintSpawnableComponent))
-class PROCEDUALSPLINECOMPONENT_API UCircleSplineComponent : public UProceduralSplineComponentBase
+class PROCEDURALSPLINECOMPONENT_API UCircleSplineComponent : public UProceduralSplineComponentBase
 {
 	GENERATED_BODY()
 
