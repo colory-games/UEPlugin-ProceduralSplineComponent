@@ -2,9 +2,9 @@
 
 #include "Modules/ModuleManager.h"
 
-#define LOCTEXT_NAMESPACE "FProcedualSplineComponent"
+#define LOCTEXT_NAMESPACE "FProceduralSplineComponent"
 
-class FProcedualSplineComponentModule : public IModuleInterface
+class FProceduralSplineComponentModule : public IModuleInterface
 {
 public:
 	virtual void StartupModule() override;
