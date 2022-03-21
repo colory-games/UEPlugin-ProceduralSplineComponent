@@ -4,7 +4,6 @@
 
 #include "CircleSplineComponent.generated.h"
 
-
 UCLASS(ClassGroup = (ProceduralSpline), meta = (BlueprintSpawnableComponent))
 class PROCEDUALSPLINECOMPONENT_API UCircleSplineComponent : public UProceduralSplineComponentBase
 {
@@ -19,4 +18,3 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = 0.0f))
 	float Radius = 500.0f;
 };
-

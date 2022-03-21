@@ -8,7 +8,6 @@ void UProceduralSplineComponentBase::PostInitProperties()
 	ProceedSpline();
 }
 
-
 #if WITH_EDITOR
 
 void UProceduralSplineComponentBase::PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent)
@@ -22,7 +21,3 @@ void UProceduralSplineComponentBase::PostEditChangeChainProperty(FPropertyChange
 }
 
 #endif
-
-
-
-
