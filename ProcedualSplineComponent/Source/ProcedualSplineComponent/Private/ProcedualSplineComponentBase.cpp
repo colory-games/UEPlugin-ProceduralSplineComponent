@@ -2,10 +2,10 @@
 
 void UProceduralSplineComponentBase::PostInitProperties()
 {
-    Super::PostInitProperties();
+	Super::PostInitProperties();
 
-    bSplineHasBeenEdited = true;
-    ProceedSpline();
+	bSplineHasBeenEdited = true;
+	ProceedSpline();
 }
 
 
@@ -13,12 +13,12 @@ void UProceduralSplineComponentBase::PostInitProperties()
 
 void UProceduralSplineComponentBase::PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent)
 {
-    Super::PostEditChangeChainProperty(PropertyChangedEvent);
+	Super::PostEditChangeChainProperty(PropertyChangedEvent);
  
-    if (PropertyChangedEvent.Property != nullptr)
-    {
-        ProceedSpline();
-    }
+	if (PropertyChangedEvent.Property != nullptr)
+	{
+		ProceedSpline();
+	}
 }
 
 #endif

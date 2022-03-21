@@ -1,7 +1,8 @@
 #pragma once
 
-#include "CoreMinimal.h"
 #include "Components/SplineComponent.h"
+#include "CoreMinimal.h"
+
 #include "ProceduralSplineComponentBase.generated.h"
 
 
@@ -11,12 +12,11 @@ class PROCEDUALSPLINECOMPONENT_API UProceduralSplineComponentBase : public USpli
 	GENERATED_BODY()
 
 public:
-    virtual void PostInitProperties() override;
+	virtual void PostInitProperties() override;
 #if WITH_EDITOR
-    virtual void PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent) override;
-    //virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+	virtual void PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent) override;
 #endif
-    virtual void ProceedSpline() {};
+	virtual void ProceedSpline() {};
 
 };
 

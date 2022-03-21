@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ProceduralSplineComponentBase.h"
+
 #include "CircleSplineComponent.generated.h"
 
 
@@ -10,12 +11,12 @@ class PROCEDUALSPLINECOMPONENT_API UCircleSplineComponent : public UProceduralSp
 	GENERATED_BODY()
 
 public:
-    virtual void ProceedSpline() override;
+	virtual void ProceedSpline() override;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = 3))
-    int PointNum = 30;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = 3))
+	int PointNum = 30;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = 0.0f))
-    float Radius = 500.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = 0.0f))
+	float Radius = 500.0f;
 };
 
