@@ -13,7 +13,7 @@ void UProceduralSplineComponentBase::PostInitProperties()
 void UProceduralSplineComponentBase::PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent)
 {
 	Super::PostEditChangeChainProperty(PropertyChangedEvent);
- 
+
 	if (PropertyChangedEvent.Property != nullptr)
 	{
 		ProceedSpline();

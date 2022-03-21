@@ -16,5 +16,4 @@ public:
 	virtual void PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent) override;
 #endif
 	virtual void ProceedSpline() {};
-
 };
