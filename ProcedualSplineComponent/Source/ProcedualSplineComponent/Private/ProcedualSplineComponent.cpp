@@ -2,7 +2,6 @@
 
 #define LOCTEXT_NAMESPACE "FProcedualSplineComponent"
 
-
 void FProcedualSplineComponentModule::StartupModule()
 {
 }
@@ -13,7 +12,7 @@ void FProcedualSplineComponentModule::ShutdownModule()
 
 bool FProcedualSplineComponentModule::SupportsDynamicReloading()
 {
-    return true;
+	return true;
 }
 
 #undef LOCTEXT_NAMESPACE
