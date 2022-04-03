@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - ci_testing
+  pull_request:
+
+jobs:
+  build-plugin:
+    name: Build Plugin
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/epicgames/unreal-engine:dev-slim-4.27
+      credentials:
+        username: ${{ secrets.GHCR_USERNAME }}
+        password: ${{ secrets.GHCR_PASSWORD }}
+      options: --user root
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Run
+        run: /home/ue4/UnrealEngine/Engine/Build/BatchFiles/RunUAT.sh BuildPlugin -Plugin=${GITHUB_WORKSPACE}/ProceduralSplineComponent/ProceduralSplineComponent.uplugin -Package=/tmp -Rocket
