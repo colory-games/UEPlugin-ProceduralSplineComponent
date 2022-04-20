@@ -25,6 +25,6 @@ jobs:
           name: "Build Plugin"
           command: |
             /home/ue4/UnrealEngine/Engine/Build/BatchFiles/RunUAT.sh BuildPlugin \
-              -Plugin=${GITHUB_WORKSPACE}/ProceduralSplineComponent/ProceduralSplineComponent.uplugin \
+              -Plugin=${PWD}/ProceduralSplineComponent/ProceduralSplineComponent.uplugin \
               -Package=/tmp \
               -Rocket
