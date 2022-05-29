@@ -3,11 +3,6 @@ workflows:
   build:
     jobs:
       - build-plugin:
-          filters:
-            branches:
-              only:
-                - main
-                - ci_testing
           context:
             - unreal-engine-ci
 
