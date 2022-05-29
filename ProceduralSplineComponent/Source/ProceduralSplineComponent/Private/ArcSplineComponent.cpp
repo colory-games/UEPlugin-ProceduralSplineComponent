@@ -8,7 +8,7 @@ void UArcSplineComponent::ProceedSpline()
 
 	for (int32 PointIndex = 0; PointIndex < PointNum; PointIndex++)
 	{
-		const float AngleRad = FMath::Lerp(StartAngle, EndAngle, (float)PointIndex / (PointNum - 1)) * PI / 180.0f;
+		const float AngleRad = FMath::Lerp(StartAngle, EndAngle, (float) PointIndex / (PointNum - 1)) * PI / 180.0f;
 		FVector Location = FVector(Radius * FMath::Sin(AngleRad), Radius * FMath::Cos(AngleRad), 0.0f);
 		AddSplinePointAtIndex(Location, PointIndex, ESplineCoordinateSpace::Local, false);
 		if (PointIndex == 0 || PointIndex == PointNum - 1)
