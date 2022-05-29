@@ -11,13 +11,12 @@ void URectangleSplineComponent::ProceedSpline()
 	}
 	InitRoundedCornerParam(RoundedCornerParam);
 
-	const TArray<FVector> SquareVertexLocations
-	{
-		FVector(Width / 2.0f, Length / 2.0f, 0.0f),
-		FVector(Width / 2.0f, -Length / 2.0f, 0.0f),
-		FVector(-Width / 2.0f, -Length / 2.0f, 0.0f),
-		FVector(-Width / 2.0f, Length / 2.0f, 0.0f)
-	};
+	TArray<FVector> SquareVertexLocations;
+	SquareVertexLocations.SetNum(4);
+	SquareVertexLocations[0] = FVector(Width / 2.0f, Length / 2.0f, 0.0f);
+	SquareVertexLocations[1] = FVector(Width / 2.0f, -Length / 2.0f, 0.0f);
+	SquareVertexLocations[2] = FVector(-Width / 2.0f, -Length / 2.0f, 0.0f);
+	SquareVertexLocations[3] = FVector(-Width / 2.0f, Length / 2.0f, 0.0f);
 
-	MakeRoundedCornerSpline(SquareVertexLocations, bRoundedCorner, RoundedCornerParam);
+	MakeRoundedCornerSpline(SquareVertexLocations, bRoundCorner, RoundedCornerParam);
 }

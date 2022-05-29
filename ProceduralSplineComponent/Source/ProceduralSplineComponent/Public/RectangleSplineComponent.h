@@ -22,7 +22,7 @@ public:
 	float Length = 500.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Square Spline", meta = (InlineEditConditionToggle))
-	bool bRoundedCorner = false;
+	bool bRoundCorner = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Square Spline",
 		meta = (EditCondition = "bRoundCorner", DisplayName = "Rounded Corner"))
