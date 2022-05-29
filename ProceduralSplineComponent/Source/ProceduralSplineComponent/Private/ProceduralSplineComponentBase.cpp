@@ -1,6 +1,6 @@
 #include "ProceduralSplineComponentBase.h"
 
-void UProceduralSplineComponentBase::InitRoundedCornerParam(FSplineRoundedCorner& RoundedCornerParam)
+void UProceduralSplineComponentBase::InitRoundedCornerParam(FSplineRoundedCornerParam& RoundedCornerParam)
 {
 	if (RoundedCornerParam.Method == ESplineRoundMethod::Circular)
 	{
@@ -12,7 +12,7 @@ void UProceduralSplineComponentBase::InitRoundedCornerParam(FSplineRoundedCorner
 	}
 }
 
-TArray<FVector> UProceduralSplineComponentBase::RoundCornerPoint(const FSplineRoundedCorner& RoundedCornerParam,
+TArray<FVector> UProceduralSplineComponentBase::RoundCornerPoint(const FSplineRoundedCornerParam& RoundedCornerParam,
 	const FVector& PrevPoint, const FVector& CornerPoint, const FVector& NextPoint, float InteriorAngleDeg,
 	TArray<ESplineRoundedPointPositionType>& OutPointPositions) const
 {
@@ -49,7 +49,7 @@ TArray<FVector> UProceduralSplineComponentBase::RoundCornerPoint(const FSplineRo
 }
 
 void UProceduralSplineComponentBase::MakeRoundedCornerSpline(
-	const TArray<FVector>& VertexLocations, bool bRoundCorner, const FSplineRoundedCorner& RoundedCornerParam)
+	const TArray<FVector>& VertexLocations, bool bRoundCorner, const FSplineRoundedCornerParam& RoundedCornerParam)
 {
 	const int32 VertexNum = VertexLocations.Num();
 	TArray<FVector> VertexLocationsRounded;

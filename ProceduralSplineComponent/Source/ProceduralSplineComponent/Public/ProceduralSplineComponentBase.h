@@ -23,7 +23,7 @@ enum class ESplineRoundedPointPositionType : uint8
 };
 
 USTRUCT(BlueprintType)
-struct FSplineRoundedCorner
+struct FSplineRoundedCornerParam
 {
 	GENERATED_BODY()
 
@@ -53,10 +53,10 @@ public:
 	virtual void ProceedSpline(){};
 
 protected:
-	void InitRoundedCornerParam(FSplineRoundedCorner& RoundedCornerParam);
-	TArray<FVector> RoundCornerPoint(const FSplineRoundedCorner& RoundedCornerParam, const FVector& PrevPoint,
+	void InitRoundedCornerParam(FSplineRoundedCornerParam& RoundedCornerParam);
+	TArray<FVector> RoundCornerPoint(const FSplineRoundedCornerParam& RoundedCornerParam, const FVector& PrevPoint,
 		const FVector& CornerPoint, const FVector& NextPoint, float InteriorAngleDeg,
 		TArray<ESplineRoundedPointPositionType>& OutPointPositions) const;
 	void MakeRoundedCornerSpline(
-		const TArray<FVector>& VertexLocations, bool bRoundCorner, const FSplineRoundedCorner& RoundedCornerParam);
+		const TArray<FVector>& VertexLocations, bool bRoundCorner, const FSplineRoundedCornerParam& RoundedCornerParam);
 };

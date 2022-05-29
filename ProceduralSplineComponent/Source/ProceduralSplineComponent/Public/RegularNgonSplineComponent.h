@@ -23,5 +23,5 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Regular Ngon Spline",
 		meta = (EditCondition = "bRoundCorner", DisplayName = "Rounded Corner"))
-	FSplineRoundedCorner RoundedCornerParam;
+	FSplineRoundedCornerParam RoundedCornerParam;
 };
