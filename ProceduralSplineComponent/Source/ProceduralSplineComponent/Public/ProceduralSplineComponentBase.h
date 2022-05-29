@@ -54,8 +54,9 @@ public:
 
 protected:
 	void InitRoundedCornerParam(FSplineRoundedCorner& RoundedCornerParam);
-	TArray<FVector> RoundCornerPoint(const FSplineRoundedCorner& RoundedCornerParam, const FVector& PrevPoint, const FVector& CornerPoint,
-		const FVector& NextPoint, float InteriorAngleDeg, TArray<ESplineRoundedPointPositionType>& OutPointPositions) const;
+	TArray<FVector> RoundCornerPoint(const FSplineRoundedCorner& RoundedCornerParam, const FVector& PrevPoint,
+		const FVector& CornerPoint, const FVector& NextPoint, float InteriorAngleDeg,
+		TArray<ESplineRoundedPointPositionType>& OutPointPositions) const;
 	void MakeRoundedCornerSpline(
 		const TArray<FVector>& VertexLocations, bool bRoundCorner, const FSplineRoundedCorner& RoundedCornerParam);
 };

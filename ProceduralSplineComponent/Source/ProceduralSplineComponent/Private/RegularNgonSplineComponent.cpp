@@ -12,8 +12,8 @@ void URegularNgonSplineComponent::ProceedSpline()
 	for (int32 VertexIndex = 0; VertexIndex < VertexNum; VertexIndex++)
 	{
 		const float IntervalAngleRad = 2.0f * PI / VertexNum;
-		NgonVertexLocations.Add(
-			FVector(Radius * FMath::Cos(VertexIndex * IntervalAngleRad), Radius * FMath::Sin(VertexIndex * IntervalAngleRad), 0.0f));
+		NgonVertexLocations.Add(FVector(
+			Radius * FMath::Cos(VertexIndex * IntervalAngleRad), Radius * FMath::Sin(VertexIndex * IntervalAngleRad), 0.0f));
 	}
 
 	MakeRoundedCornerSpline(NgonVertexLocations, bRoundCorner, RoundedCornerParam);
