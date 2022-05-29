@@ -6,7 +6,8 @@ void URectangleSplineComponent::ProceedSpline()
 
 	ClearSplinePoints();
 
-	if (bSquare) {
+	if (bSquare)
+	{
 		Length = Width;
 	}
 	InitRoundedCornerParam(RoundedCornerParam);
