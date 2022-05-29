@@ -21,6 +21,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Regular Ngon Spline", meta = (InlineEditConditionToggle))
 	bool bRoundCorner = false;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Regular Ngon Spline", meta = (EditCondition = "bRoundCorner"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Regular Ngon Spline", meta = (EditCondition = "bRoundCorner", DisplayName = "Rounded Corner"))
 	FSplineRoundedCorner RoundedCornerParam;
 };
