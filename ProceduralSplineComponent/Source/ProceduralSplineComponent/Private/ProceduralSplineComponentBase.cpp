@@ -13,8 +13,8 @@ void UProceduralSplineComponentBase::InitRoundedCornerParam(FSplineRoundedCorner
 }
 
 TArray<FVector> UProceduralSplineComponentBase::RoundCornerPoint(
-	const FSplineRoundedCorner& RoundParam, const FVector& PrevPoint, const FVector& CornerPoint, const FVector& NextPoint,
-	float InteriorAngleDeg, TArray<ESplineRoundedPointPositionType>& OutPointPositions) const
+	const FSplineRoundedCorner& RoundParam, const FVector& PrevPoint, const FVector& CornerPoint,
+	const FVector& NextPoint, float InteriorAngleDeg, TArray<ESplineRoundedPointPositionType>& OutPointPositions) const
 {
 	const FVector DirectionCornerToPrev = (PrevPoint - CornerPoint).GetSafeNormal();
 	const FVector DirectionCornerToNext = (NextPoint - CornerPoint).GetSafeNormal();
