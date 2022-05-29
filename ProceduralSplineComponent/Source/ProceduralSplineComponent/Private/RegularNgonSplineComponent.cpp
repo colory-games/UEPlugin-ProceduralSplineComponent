@@ -6,7 +6,7 @@ void URegularNgonSplineComponent::ProceedSpline()
 
 	ClearSplinePoints();
 
-	InitRoundedCornerParam(RoundedCornerParam);
+	InitRoundedCornerParam(RoundedCornerParams);
 
 	TArray<FVector> NgonVertexLocations;
 	for (int32 VertexIndex = 0; VertexIndex < VertexNum; VertexIndex++)
@@ -16,5 +16,5 @@ void URegularNgonSplineComponent::ProceedSpline()
 			Radius * FMath::Cos(VertexIndex * IntervalAngleRad), Radius * FMath::Sin(VertexIndex * IntervalAngleRad), 0.0f));
 	}
 
-	MakeRoundedCornerSpline(NgonVertexLocations, bRoundCorner, RoundedCornerParam);
+	MakeRoundedCornerSpline(NgonVertexLocations, bRoundCorner, RoundedCornerParams);
 }
