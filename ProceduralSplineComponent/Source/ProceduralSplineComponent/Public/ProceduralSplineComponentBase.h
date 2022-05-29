@@ -9,7 +9,8 @@ UENUM(BlueprintType)
 enum class ESplineRoundMethod : uint8
 {
 	Circular,
-	TangentScale
+	TangentScale,
+	Num UMETA(Hidden)
 };
 
 UENUM(BlueprintType)
@@ -17,7 +18,8 @@ enum class ESplineRoundedPointPositionType : uint8
 {
 	Start,
 	Between,
-	End
+	End,
+	Num UMETA(Hidden)
 };
 
 USTRUCT(BlueprintType)
@@ -32,7 +34,7 @@ struct FSplineRoundedCorner
 	float Length = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "Method == ESplineRoundMethod::Circular"))
-	int PointNum = 5;
+	int32 PointNum = 5;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "Method == ESplineRoundMethod::TangentScale"))
 	float TangentScale = 1.0f;
@@ -51,9 +53,9 @@ public:
 	virtual void ProceedSpline(){};
 
 protected:
-	void InitRoundedCornerParam(FSplineRoundedCorner& RoundParam);
-	TArray<FVector> RoundCornerPoint(const FSplineRoundedCorner& RoundParam, const FVector& PrevPoint, const FVector& CornerPoint,
+	void InitRoundedCornerParam(FSplineRoundedCorner& RoundedCornerParam);
+	TArray<FVector> RoundCornerPoint(const FSplineRoundedCorner& RoundedCornerParam, const FVector& PrevPoint, const FVector& CornerPoint,
 		const FVector& NextPoint, float InteriorAngleDeg, TArray<ESplineRoundedPointPositionType>& OutPointPositions) const;
 	void MakeRoundedCornerSpline(
-		const TArray<FVector>& VertexLocations, bool bRoundedCorner, const FSplineRoundedCorner& RoundParam);
+		const TArray<FVector>& VertexLocations, bool bRoundCorner, const FSplineRoundedCorner& RoundedCornerParam);
 };
