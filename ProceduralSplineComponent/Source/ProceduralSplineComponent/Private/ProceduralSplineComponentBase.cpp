@@ -12,10 +12,8 @@ void UProceduralSplineComponentBase::InitRoundedCornerParam(FSplineRoundedCorner
 	}
 }
 
-TArray<FVector> UProceduralSplineComponentBase::RoundCornerPoint(
-	const FSplineRoundedCorner& RoundParam, const FVector& PrevPoint, const FVector& CornerPoint,
-	const FVector& NextPoint, float InteriorAngleDeg,
-	TArray<ESplineRoundedPointPositionType>& OutPointPositions) const
+TArray<FVector> UProceduralSplineComponentBase::RoundCornerPoint(const FSplineRoundedCorner& RoundParam, const FVector& PrevPoint, const FVector& CornerPoint,
+	const FVector& NextPoint, float InteriorAngleDeg, TArray<ESplineRoundedPointPositionType>& OutPointPositions) const
 {
 	const FVector DirectionCornerToPrev = (PrevPoint - CornerPoint).GetSafeNormal();
 	const FVector DirectionCornerToNext = (NextPoint - CornerPoint).GetSafeNormal();
@@ -24,8 +22,8 @@ TArray<FVector> UProceduralSplineComponentBase::RoundCornerPoint(
 	const float DistanceCornerToRoundCenter = RoundParam.Length / cos(InteriorAngleRad / 2.0f);
 	const FVector RoundCenterLocation = CornerPoint + DirectionCornerToRoundCenter * DistanceCornerToRoundCenter;
 	const FVector RoundAxis = FVector::CrossProduct(DirectionCornerToNext, DirectionCornerToPrev).GetSafeNormal();
-	const FVector VectorRoundCenterToNeighbor
-		= -DirectionCornerToRoundCenter * DistanceCornerToRoundCenter + DirectionCornerToPrev * RoundParam.Length;
+	const FVector VectorRoundCenterToNeighbor =
+		-DirectionCornerToRoundCenter * DistanceCornerToRoundCenter + DirectionCornerToPrev * RoundParam.Length;
 
 	TArray<FVector> ReturnLocations;
 	for (int PointIndex = 0; PointIndex < RoundParam.PointNum; PointIndex++)
@@ -49,7 +47,8 @@ TArray<FVector> UProceduralSplineComponentBase::RoundCornerPoint(
 	return ReturnLocations;
 }
 
-void UProceduralSplineComponentBase::MakeRoundedCornerSpline(const TArray<FVector>& VertexLocations, bool bRoundedCorner, const FSplineRoundedCorner& RoundParam)
+void UProceduralSplineComponentBase::MakeRoundedCornerSpline(
+	const TArray<FVector>& VertexLocations, bool bRoundedCorner, const FSplineRoundedCorner& RoundParam)
 {
 	const int VertexNum = VertexLocations.Num();
 	TArray<FVector> VertexLocationsRounded;
@@ -59,22 +58,18 @@ void UProceduralSplineComponentBase::MakeRoundedCornerSpline(const TArray<FVecto
 		for (int VertexIndex = 0; VertexIndex < VertexNum; VertexIndex++)
 		{
 			const FVector& CornerVertexLocation = VertexLocations[VertexIndex];
-			const FVector& PrevVertexLocation = (VertexIndex != 0)
-				? VertexLocations[VertexIndex - 1]
-				: VertexLocations[VertexNum - 1];
-			const FVector& NextVertexLocation = (VertexIndex != VertexNum - 1)
-				? VertexLocations[VertexIndex + 1]
-				: VertexLocations[0];
+			const FVector& PrevVertexLocation =
+				(VertexIndex != 0) ? VertexLocations[VertexIndex - 1] : VertexLocations[VertexNum - 1];
+			const FVector& NextVertexLocation =
+				(VertexIndex != VertexNum - 1) ? VertexLocations[VertexIndex + 1] : VertexLocations[0];
 			const float InternalAngleDeg = 180.0f * (VertexNum - 2) / VertexNum;
 			TArray<ESplineRoundedPointPositionType> RoundPointPositionTypes;
-			VertexLocationsRounded.Append(
-				RoundCornerPoint(RoundParam, PrevVertexLocation, CornerVertexLocation, NextVertexLocation, InternalAngleDeg, RoundPointPositionTypes));
+			VertexLocationsRounded.Append(RoundCornerPoint(RoundParam, PrevVertexLocation, CornerVertexLocation, NextVertexLocation,
+				InternalAngleDeg, RoundPointPositionTypes));
 			RoundexPointPositionTypes.Append(RoundPointPositionTypes);
 		}
 	}
-	const TArray<FVector>& SplinePointLocations = !bRoundedCorner
-		? VertexLocations
-		: VertexLocationsRounded;
+	const TArray<FVector>& SplinePointLocations = (!bRoundedCorner) ? VertexLocations : VertexLocationsRounded;
 
 	for (int32 PointIndex = 0; PointIndex < SplinePointLocations.Num(); PointIndex++)
 	{
@@ -97,15 +92,12 @@ void UProceduralSplineComponentBase::MakeRoundedCornerSpline(const TArray<FVecto
 	{
 		for (int32 PointIndex = 0; PointIndex < SplinePointLocations.Num(); PointIndex++)
 		{
-			const int PrevPointIndex = (PointIndex != 0)
-				? PointIndex - 1
-				: SplinePointLocations.Num() - 1;
-			const int NextPointIndex = (PointIndex != SplinePointLocations.Num() - 1)
-				? PointIndex + 1
-				: 0;
+			const int PrevPointIndex = (PointIndex != 0) ? PointIndex - 1 : SplinePointLocations.Num() - 1;
+			const int NextPointIndex = (PointIndex != SplinePointLocations.Num() - 1) ? PointIndex + 1 : 0;
 			if (RoundexPointPositionTypes[PointIndex] == ESplineRoundedPointPositionType::Start)
 			{
-				const FVector TangentDirection = (SplinePointLocations[PointIndex] - SplinePointLocations[PrevPointIndex]).GetSafeNormal();
+				const FVector TangentDirection =
+					(SplinePointLocations[PointIndex] - SplinePointLocations[PrevPointIndex]).GetSafeNormal();
 				const float NextTangentSize = GetTangentAtSplinePoint(NextPointIndex, ESplineCoordinateSpace::Local).Size();
 				const FVector Tangent = TangentDirection * NextTangentSize * RoundParam.TangentScale;
 				SetTangentAtSplinePoint(PointIndex, Tangent, ESplineCoordinateSpace::Local, false);
@@ -114,9 +106,8 @@ void UProceduralSplineComponentBase::MakeRoundedCornerSpline(const TArray<FVecto
 			{
 				const FVector TangentDirection = (SplinePointLocations[NextPointIndex] - SplinePointLocations[PointIndex]).GetSafeNormal();
 				const float PrevTangentSize = GetTangentAtSplinePoint(PrevPointIndex, ESplineCoordinateSpace::Local).Size();
-				const FVector Tangent = (RoundParam.PointNum != 2)
-					? TangentDirection * PrevTangentSize * RoundParam.TangentScale
-					: TangentDirection * PrevTangentSize;
+				const FVector Tangent = (RoundParam.PointNum != 2) ? TangentDirection * PrevTangentSize * RoundParam.TangentScale
+																   : TangentDirection * PrevTangentSize;
 				SetTangentAtSplinePoint(PointIndex, Tangent, ESplineCoordinateSpace::Local, false);
 			}
 		}
