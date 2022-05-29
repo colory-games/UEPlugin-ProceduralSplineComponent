@@ -6,18 +6,18 @@ void URectangleSplineComponent::ProceedSpline()
 
 	ClearSplinePoints();
 
-    if (bSquare) {
-        Length = Width;
-    }
-    InitRoundedCornerParam(RoundedCornerParam);
+	if (bSquare) {
+		Length = Width;
+	}
+	InitRoundedCornerParam(RoundedCornerParam);
 
-    const TArray<FVector> SquareVertexLocations
-    {
-        FVector(Width / 2.0f, Length / 2.0f, 0.0f),
-        FVector(Width / 2.0f, -Length / 2.0f, 0.0f),
-        FVector(-Width / 2.0f, -Length / 2.0f, 0.0f),
-        FVector(-Width / 2.0f, Length / 2.0f, 0.0f)
-    };
+	const TArray<FVector> SquareVertexLocations
+	{
+		FVector(Width / 2.0f, Length / 2.0f, 0.0f),
+		FVector(Width / 2.0f, -Length / 2.0f, 0.0f),
+		FVector(-Width / 2.0f, -Length / 2.0f, 0.0f),
+		FVector(-Width / 2.0f, Length / 2.0f, 0.0f)
+	};
 
 	MakeRoundedCornerSpline(SquareVertexLocations, bRoundedCorner, RoundedCornerParam);
 }
