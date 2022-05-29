@@ -48,12 +48,12 @@ public:
 #if WITH_EDITOR
 	virtual void PostEditChangeChainProperty(FPropertyChangedChainEvent& PropertyChangedEvent) override;
 #endif
-	virtual void ProceedSpline() {};
+	virtual void ProceedSpline(){};
 
 protected:
 	void InitRoundedCornerParam(FSplineRoundedCorner& RoundParam);
-	TArray<FVector> RoundCornerPoint(
-		const FSplineRoundedCorner& RoundParam, const FVector& PrevPoint, const FVector& CornerPoint, const FVector& NextPoint,
-		float InteriorAngleDeg, TArray<ESplineRoundedPointPositionType>& OutPointPositions) const;
-	void MakeRoundedCornerSpline(const TArray<FVector>& VertexLocations, bool bRoundedCorner, const FSplineRoundedCorner& RoundParam);
+	TArray<FVector> RoundCornerPoint(const FSplineRoundedCorner& RoundParam, const FVector& PrevPoint, const FVector& CornerPoint,
+		const FVector& NextPoint,float InteriorAngleDeg, TArray<ESplineRoundedPointPositionType>& OutPointPositions) const;
+	void MakeRoundedCornerSpline(
+		const TArray<FVector>& VertexLocations, bool bRoundedCorner, const FSplineRoundedCorner& RoundParam);
 };
