@@ -65,8 +65,8 @@ void UProceduralSplineComponentBase::MakeRoundedCornerSpline(
 				(VertexIndex != VertexNum - 1) ? VertexLocations[VertexIndex + 1] : VertexLocations[0];
 			const float InternalAngleDeg = 180.0f * (VertexNum - 2) / VertexNum;
 			TArray<ESplineRoundedPointPositionType> RoundPointPositionTypes;
-			VertexLocationsRounded.Append(RoundCornerPoint(RoundedCornerParam, PrevVertexLocation, CornerVertexLocation, NextVertexLocation,
-				InternalAngleDeg, RoundPointPositionTypes));
+			VertexLocationsRounded.Append(RoundCornerPoint(RoundedCornerParam, PrevVertexLocation, CornerVertexLocation,
+				NextVertexLocation, InternalAngleDeg, RoundPointPositionTypes));
 			RoundexPointPositionTypes.Append(RoundPointPositionTypes);
 		}
 	}
