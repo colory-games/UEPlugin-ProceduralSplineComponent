@@ -27,16 +27,18 @@ struct FSplineRoundedCornerParams
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spline Rounded Corner")
 	ESplineRoundMethod Method;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spline Rounded Corner")
 	float Length = 50.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "Method == ESplineRoundMethod::Circular"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spline Rounded Corner",
+		meta = (EditCondition = "Method == ESplineRoundMethod::Circular"))
 	int32 PointNum = 5;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "Method == ESplineRoundMethod::TangentScale"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spline Rounded Corner",
+		meta = (EditCondition = "Method == ESplineRoundMethod::TangentScale"))
 	float TangentScale = 1.0f;
 };
 
