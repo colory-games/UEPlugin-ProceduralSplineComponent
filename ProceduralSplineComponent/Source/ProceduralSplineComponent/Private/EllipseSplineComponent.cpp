@@ -12,7 +12,6 @@ void UEllipseSplineComponent::ProceedSpline()
 			Length / 2.0f * FMath::Cos((float) PointIndex / PointNum * 2.0 * PI), 0.0f);
 		AddSplinePointAtIndex(Location, PointIndex, ESplineCoordinateSpace::Local, false);
 		SetSplinePointType(PointIndex, ESplinePointType::Curve, false);
-
 	}
 
 	SetClosedLoop(true, false);
