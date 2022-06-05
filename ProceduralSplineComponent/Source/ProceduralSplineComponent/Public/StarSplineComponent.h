@@ -27,5 +27,4 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Star Spline",
 		meta = (EditCondition = "bRoundCorner", DisplayName = "Rounded Corner"))
 	FSplineRoundedCornerParams RoundedCornerParams;
-
 };
