@@ -15,9 +15,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ellipse Spline", meta = (ClampMin = 2))
 	int32 PointNum = 30;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Square Spline", meta = (ClampMin = 0.0f))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ellipse Spline", meta = (ClampMin = 0.0f))
 	float Width = 500.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Square Spline", meta = (ClampMin = 0.0f, EditCondition = "!bSquare"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ellipse Spline", meta = (ClampMin = 0.0f))
 	float Length = 500.0f;
 };
