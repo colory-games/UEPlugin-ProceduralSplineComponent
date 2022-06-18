@@ -24,6 +24,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spiral Spline", meta = (ClampMin = 0.0f))
 	float OuterRadius = 500.0f;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spiral Spline")
-    bool bInvertSpiral = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spiral Spline")
+	bool bInvertSpiral = false;
 };

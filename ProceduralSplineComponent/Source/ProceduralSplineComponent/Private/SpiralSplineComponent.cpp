@@ -11,8 +11,7 @@ void USpiralSplineComponent::ProceedSpline()
 	{
 		const float Theta = MaxTheta * PointIndex / (PointNum - 1);
 		const float R = FMath::Lerp<float>(InnerRadius, OuterRadius, Theta / MaxTheta);
-		const FVector Location = (!bInvertSpiral)
-			? FVector(R * FMath::Sin(Theta), R * FMath::Cos(Theta), 0.0f)
+		const FVector Location = (!bInvertSpiral) ? FVector(R * FMath::Sin(Theta), R * FMath::Cos(Theta), 0.0f)
 			: FVector(-R * FMath::Sin(Theta), R * FMath::Cos(Theta), 0.0f);
 		AddSplinePointAtIndex(Location, PointIndex, ESplineCoordinateSpace::Local, false);
 		if (PointIndex == 0 || PointIndex == PointNum - 1)
