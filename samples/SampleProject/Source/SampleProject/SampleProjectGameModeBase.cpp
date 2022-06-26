@@ -7,6 +7,4 @@
  * https://opensource.org/licenses/MIT
  */
 
-
 #include "SampleProjectGameModeBase.h"
-
