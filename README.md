@@ -1,23 +1,23 @@
 # Unreal Engine Plugin: Procedural Spline Component
 
 The Procedural Spline Component is a Unreal Engine plugin which adds spline components.  
-You can easily generate geometric shapes (like circle, rectangle) by using these components.
+You can easily generate geometric shaped spline curve (like circle, rectangle) by using these components.
 
 ![](docs/images/thumbnail/procedural_spline_component.png)
 
 ## Features
 
-* Custom spline components which generates geometric shapes
-  * Arc
-  * Circle
-  * Diamond
-  * Ellipse
-  * Jagged
-  * Rectangle
-  * Regular Ngon
-  * Spiral
-  * Spring
-  * Star
+* Custom spline components which generates geometric shaped spline curve
+  * Arc Spline
+  * Circle Spline
+  * Diamond Spline
+  * Ellipse Spline
+  * Jagged Spline
+  * Rectangle Spline
+  * Regular Ngon Spline
+  * Spiral Spline
+  * Spring Spline
+  * Star Spline
 
 ## Supported Environment
 
@@ -50,7 +50,7 @@ You can also discuss about this plugin at [Discord](https://discord.gg/Tg9A5JxR)
 ### Owner
 
 This project is owned by the members of [Colory Games](https://colory-games.net/).  
-The main mainter of this project is as follows.
+The maintainer of this project is as follows.
 
 |Name|Contact|
 |---|---|
